@@ -30,4 +30,48 @@ public class Quarto {
             }
         }
     }
+
+    public TipoQuarto getTipoQuarto() {
+        return tipoQuarto;
+    }
+
+    public void setTipoQuarto(TipoQuarto tipoQuarto) {
+        this.tipoQuarto = tipoQuarto;
+    }
+
+    public Hospede getHospede() {
+        return hospede;
+    }
+
+    public void setHospede(Hospede hospede) {
+        this.hospede = hospede;
+    }
+
+    public int getNumHospedes() {
+        return numHospedes;
+    }
+
+    public void setNumHospedes(int numHospedes) {
+        this.numHospedes = numHospedes;
+    }
+
+    public double getConta() {
+        return conta;
+    }
+
+    public void setConta(double conta) {
+        this.conta = conta;
+    }
+
+    @Override
+    public String toString() {
+        return "Quarto{" +
+                "tipoQuarto=" + tipoQuarto +
+                ", hospede=" + hospede +
+                ", numHospedes=" + numHospedes +
+                ", conta=" + conta +
+                ", dataInicio=" + dataInicio +
+                ", dataFim=" + dataFim +
+                '}';
+    }
 }
