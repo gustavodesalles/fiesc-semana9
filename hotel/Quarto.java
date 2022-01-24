@@ -16,19 +16,23 @@ public class Quarto {
         this.tipoQuarto = tipoQuarto;
         this.hospede = hospede;
         this.numHospedes = 1 + numHospedes;
-        this.conta = 0;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
+        this.conta = calcularConta();
+    }
 
+    public double calcularConta() {
+        double auxConta = 0;
         LocalDate auxDia = dataInicio;
         long dias = ChronoUnit.DAYS.between(dataInicio, dataFim) + 1;
         for (int i = 0; i < dias; i++) {
             if (auxDia.getMonthValue() <= 3 || auxDia.getMonthValue() >= 11) { // caso esteja em temporada alta
-                conta += tipoQuarto.getDiariaAlta() * numHospedes;
+                auxConta += tipoQuarto.getDiariaAlta() * numHospedes;
             } else {
-                conta += tipoQuarto.getDiariaBaixa() * numHospedes;
+                auxConta += tipoQuarto.getDiariaBaixa() * numHospedes;
             }
         }
+        return auxConta;
     }
 
     public TipoQuarto getTipoQuarto() {

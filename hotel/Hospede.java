@@ -24,4 +24,13 @@ public class Hospede {
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
+
+    @Override
+    public String toString() {
+        return "Hospede{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", dataNascimento=" + dataNascimento +
+                '}';
+    }
 }

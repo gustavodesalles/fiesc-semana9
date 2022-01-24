@@ -15,7 +15,7 @@ public class Main {
 
     public static Quarto getQuartoByCPF(String cpf) {
         for (Quarto q : quartos) {
-            return q;
+            if (q.getHospede().getCpf().equals(cpf)) return q;
         }
         return null;
     }
@@ -188,15 +188,18 @@ public class Main {
                 main(null);
                 break;
             case 2:
+                input.nextLine();
                 System.out.println("Digite o CPF do hóspede: ");
                 String cpf = input.nextLine();
-                input.nextLine();
+//                input.nextLine();
                 System.out.println(getQuartoByCPF(cpf));
                 main(null);
                 break;
             case 3:
-                cpf = input.nextLine();
-                quartos.remove(getQuartoByCPF(cpf));
+                input.nextLine();
+                System.out.println("Digite o CPF do hóspede: ");
+                String cpfRemover = input.nextLine();
+                quartos.remove(getQuartoByCPF(cpfRemover));
                 main(null);
                 break;
             default:
